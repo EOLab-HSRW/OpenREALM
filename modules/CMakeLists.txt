@@ -53,7 +53,7 @@ endif()
 
 if (WITH_densifier)
     list(APPEND BUILD_MODULES "densifier")
-    add_subdirectory(realm_densifier/realm_densifier_impl/psl)
+    add_subdirectory(realm_densifier/realm_densifier_impl/PlaneSweepLib)
     add_subdirectory(realm_densifier/realm_densifier_base)
 endif()
 
