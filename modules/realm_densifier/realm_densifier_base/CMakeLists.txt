@@ -9,15 +9,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 # Dependencies
 ################################################################################
 
-
-if(CMAKE_CUDA_COMPILER)
-    message(STATUS "CUDA found. Compiling densification with CUDA support...\n")
-    set(DENSIFIER_WITH_CUDA True)
-else()
-    message(STATUS "CUDA not found. Skipping PSL package...\n")
-    set(DENSIFIER_WITH_CUDA False)
-endif()
-
 # Fix to avoid OpenCV package confusion with ROS melodic
 find_package(OpenCV 3.3.1 EXACT QUIET)
 if (NOT OpenCV_FOUND)
@@ -36,13 +27,20 @@ endif()
 
 set(root ${CMAKE_CURRENT_SOURCE_DIR})
 
-if (DENSIFIER_WITH_CUDA)
-    add_definitions(-DUSE_CUDA)
-    set(DENSIFIER_IMPL_LIBS psl)
-    set(DENSIFIER_IMPL_LIBS_HEADER ${psl_INCLUDE_DIR})
-    set(DENSIFIER_IMPL_HEADERS ${root}/include/realm_densifier_base/plane_sweep.h)
-    set(DENSIFIER_IMPL_SOURCES ${root}/src/plane_sweep.cpp)
+# Use presence of the PSL target (added by the submodule) to decide CUDA path.
+set(DENSIFIER_WITH_CUDA FALSE)
+if (TARGET PSL OR TARGET PSL::PSL)
+    set(DENSIFIER_WITH_CUDA TRUE)
+    message(STATUS "PSL target found — building densifier with CUDA support.")
 endif()
+
+# if (DENSIFIER_WITH_CUDA)
+#     add_definitions(-DUSE_CUDA)
+#     set(DENSIFIER_IMPL_LIBS PSL)
+#     set(DENSIFIER_IMPL_LIBS_HEADER ${psl_INCLUDE_DIR})
+#     set(DENSIFIER_IMPL_HEADERS ${root}/include/realm_densifier_base/plane_sweep.h)
+#     set(DENSIFIER_IMPL_SOURCES ${root}/src/plane_sweep.cpp)
+# endif()
 
 set(HEADER_FILES
         ${root}/include/realm_densifier_base/densifier_dummy.h
@@ -59,15 +57,17 @@ set(SOURCE_FILES
         ${root}/src/densifier_dummy.cpp
         ${DENSIFIER_IMPL_SOURCES})
 
-# Organize the source and header files into groups
-source_group("Headers" FILES ${HEADER_FILES})
-source_group("Source" FILES ${SOURCE_FILES})
-source_group("Forms" FILES ${FORM_FILES})
-source_group("Resources" FILES ${RESOURCE_FILES})
-
-if(CMAKE_VERSION VERSION_GREATER 3.8)
-    source_group(TREE ${root} FILES ${HEADER_FILES} ${SOURCE_FILES})
+if (DENSIFIER_WITH_CUDA)
+    list(APPEND HEADER_FILES
+        ${root}/include/realm_densifier_base/plane_sweep.h
+    )
+    list(APPEND SOURCE_FILES
+        ${root}/src/plane_sweep.cpp
+    )
 endif()
+
+
+source_group(TREE ${root} FILES ${HEADER_FILES} ${SOURCE_FILES})
 
 # Define the folder containing the header files for this library
 set(realm_densifier_base_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include PARENT_SCOPE)
@@ -77,64 +77,66 @@ set(realm_densifier_base_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include PARENT_
 # Build
 ################################################################################
 
-
-## realm densifier
-include_directories(
-        ${CMAKE_CURRENT_BINARY_DIR}
-        ${CMAKE_BINARY_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${OpenCV_INCLUDE_DIRS}
-        ${realm_core_INCLUDE_DIR}
-        ${realm_io_INCLUDE_DIR}
-        ${DENSIFIER_IMPL_LIBS_HEADER}
-)
-
 add_library(${LIBRARY_NAME} SHARED
-        ${SOURCE_FILES}
-        ${HEADER_FILES}
-        ${FORM_HEADERS}
-        ${HEADERS_MOC}
-        ${RESOURCES_RCC}
+    ${SOURCE_FILES}
+    ${HEADER_FILES}
+    ${FORM_HEADERS}
+    ${HEADERS_MOC}
+    ${RESOURCES_RCC}
 )
 
-target_include_directories(${LIBRARY_NAME} PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> # for headers when building
-        $<INSTALL_INTERFACE:${OpenREALM_INC_INSTALL_DIR}> # for client in install mode
-        )
+# Public headers for dependents
+target_include_directories(${LIBRARY_NAME}
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:${OpenREALM_INC_INSTALL_DIR}>
+    PRIVATE
+        ${OpenCV_INCLUDE_DIRS}
+)
 
+# Definitions: expose USE_CUDA only when the CUDA impl is compiled
+if (DENSIFIER_WITH_CUDA)
+    target_compile_definitions(${LIBRARY_NAME} PUBLIC USE_CUDA)
+endif()
+
+# Link deps
 target_link_libraries(${LIBRARY_NAME}
-        PUBLIC
-            realm_core
-            realm_io
-            ${DENSIFIER_IMPL_LIBS}
-        PRIVATE
-            ${OpenCV_LIBRARIES}
-        )
+    PUBLIC
+        realm_core
+        realm_io
+    PRIVATE
 
+        ${OpenCV_LIBRARIES}
+)
+
+# Link PSL if available (transitively brings its public include dirs)
+if (TARGET PSL::PSL)
+    target_link_libraries(${LIBRARY_NAME} PUBLIC PSL::PSL)
+elseif (TARGET PSL)
+    target_link_libraries(${LIBRARY_NAME} PUBLIC PSL)
+endif()
 
 ################################################################################
 # Install
 ################################################################################
 
-set_target_properties(${LIBRARY_NAME} PROPERTIES OUTPUT_NAME "open_${LIBRARY_NAME}-${OpenREALM_VERSION}")
-
-install(TARGETS ${LIBRARY_NAME} EXPORT OpenREALMTargets
-        RUNTIME       DESTINATION ${OpenREALM_RUNTIME_INSTALL_DIR}
-        LIBRARY       DESTINATION ${OpenREALM_LIBRARY_INSTALL_DIR}
-        ARCHIVE       DESTINATION ${OpenREALM_ARCHIVE_INSTALL_DIR}
-        FRAMEWORK     DESTINATION ${OpenREALM_FRAMEWORK_INSTALL_DIR})
-
-# Headers
-install(
-        DIRECTORY include/${LIBRARY_NAME}
-        DESTINATION ${OpenREALM_INC_INSTALL_DIR}
-        FILES_MATCHING
-        PATTERN "*.h"
-        PATTERN "*.hpp"
+set_target_properties(${LIBRARY_NAME}
+    PROPERTIES OUTPUT_NAME "open_${LIBRARY_NAME}-${OpenREALM_VERSION}"
 )
 
 
-################################################################################
-# Test
-################################################################################
+install(TARGETS ${LIBRARY_NAME} EXPORT OpenREALMTargets
+    RUNTIME  DESTINATION ${OpenREALM_RUNTIME_INSTALL_DIR}
+    LIBRARY  DESTINATION ${OpenREALM_LIBRARY_INSTALL_DIR}
+    ARCHIVE  DESTINATION ${OpenREALM_ARCHIVE_INSTALL_DIR}
+    FRAMEWORK DESTINATION ${OpenREALM_FRAMEWORK_INSTALL_DIR}
+)
 
+install(
+    DIRECTORY include/${LIBRARY_NAME}
+    DESTINATION ${OpenREALM_INC_INSTALL_DIR}
+
+    FILES_MATCHING
+    PATTERN "*.h"
+    PATTERN "*.hpp"
+)

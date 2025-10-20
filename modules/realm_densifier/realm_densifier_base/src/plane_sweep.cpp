@@ -2,7 +2,7 @@
 
 #include <realm_densifier_base/plane_sweep.h>
 
-#include <psl/exception.h>
+#include <psl_base/exception.h>
 
 using namespace realm;
 using namespace densifier;

@@ -12,8 +12,8 @@
 #include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>
 
-#include <psl/cameraMatrix.h>
-#include <psl/cudaPlaneSweep.h>
+#include <psl_base/cameraMatrix.h>
+#include <psl_stereo/cudaPlaneSweep.h>
 
 #include <realm_core/frame.h>
 #include <realm_densifier_base/densifier_IF.h>

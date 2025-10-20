@@ -102,20 +102,15 @@ endif()
 
 check_language(CUDA)
 if(CMAKE_CUDA_COMPILER)
-    enable_language(CUDA)
-    message(STATUS "CUDA Support enabled.")
+  enable_language(CUDA)
+  message(STATUS "CUDA Support enabled.")
 
-    include(FindCUDA)
-    set(CUDA_ARCH_LIST Auto CACHE STRING  "List of CUDA architectures (e.g. Pascal, Volta, etc) or \
-                                           compute capability versions (6.1, 7.0, etc) to generate code for. \
-                                           Set to Auto for automatic detection (default).")
-    cuda_select_nvcc_arch_flags(CUDA_ARCH_FLAGS ${CUDA_ARCH_LIST})
-    list(APPEND CUDA_NVCC_FLAGS ${CUDA_ARCH_FLAGS})
+  set(CMAKE_CUDA_ARCHITECTURES "89" CACHE STRING "" FORCE)
 else()
     message(STATUS "CUDA Support disabled.")
 endif()
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)

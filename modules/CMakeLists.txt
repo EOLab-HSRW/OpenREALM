@@ -53,7 +53,20 @@ endif()
 
 if (WITH_densifier)
     list(APPEND BUILD_MODULES "densifier")
-    add_subdirectory(realm_densifier/realm_densifier_impl/PlaneSweepLib)
+    find_package(CUDAToolkit QUIET)
+
+    if (CUDAToolkit_FOUND)
+
+        message(STATUS "CUDA toolkit found — enabling PlaneSweepLib for densifier.")
+
+        set(PSL_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+        set(PSL_BUILD_APPS  OFF CACHE BOOL "" FORCE)
+
+        add_subdirectory(realm_densifier/realm_densifier_impl/PlaneSweepLib)
+    else()
+        message(STATUS "CUDA toolkit NOT found — PlaneSweepLib will be skipped.")
+    endif()
+
     add_subdirectory(realm_densifier/realm_densifier_base)
 endif()
 
