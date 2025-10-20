@@ -1,6 +1,8 @@
 
 
 #include <realm_core/conversions.h>
+#include <stdexcept>
+
 
 using namespace realm;
 

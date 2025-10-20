@@ -3,6 +3,7 @@
 #ifndef OPENREALM_GDAL_CONTINUOUS_WRITER_H
 #define OPENREALM_GDAL_CONTINUOUS_WRITER_H
 
+#include <deque>
 #include <realm_core/worker_thread_base.h>
 #include <realm_io/gis_export.h>
 
