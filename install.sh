@@ -230,7 +230,6 @@ apt_install \
   libsuitesparse-dev \
   libgoogle-glog-dev \
   libgflags-dev \
-  libopencv-dev \
   libyaml-cpp-dev \
   gdal-bin \
   libgdal-dev \
