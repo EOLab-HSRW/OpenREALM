@@ -203,7 +203,8 @@ apt_install() {
   $SKIP_APT && { log_info "Skipping apt install for: $*"; return 0; }
   current_command="apt-get install $*"
   # shellcheck disable=SC2086
-  retry 3 $SUDO DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install $*
+  retry 3 $SUDO apt-get -y --quiet --no-install-recommends install $*
+  # retry 3 $SUDO DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install $*
 }
 
 if ! $SKIP_APT; then
