@@ -29,7 +29,8 @@ target_link_libraries(${MODULE_NAME}
     core
     io
     opencv_core
-    GDAL::GDAL
+    # GDAL::GDAL
+    ${GDAL_LIBRARY}
     ${Boost_LIBRARIES}
     Eigen3::Eigen
 )
