@@ -39,7 +39,7 @@ option(${PROJECT_NAME}_BUILD_ORTHO      "Build ortho"         ON)
 option(${PROJECT_NAME}_BUILD_VSLAM_BASE "Build vslam_base"    ON)
 option(${PROJECT_NAME}_BUILD_STAGES     "Build stages"        ON)
 
-option(TESTS_ENABLED "Whether to build test binaries" ON)
+option(TESTS_ENABLED "Whether to build test binaries" OFF)
 
 # Prefer config packages installed by Spack over Find<...>.cmake modules
 set(CMAKE_FIND_PACKAGE_PREFER_CONFIG ON)
