@@ -1,11 +1,11 @@
 
 
 #define LOGURU_IMPLEMENTATION 1
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
 #include <functional>
 
-#include <core/worker_thread_base.h>
+#include <OpenREALM/core/worker_thread_base.h>
 
 using namespace realm;
 

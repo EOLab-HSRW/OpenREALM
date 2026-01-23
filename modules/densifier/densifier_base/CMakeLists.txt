@@ -50,11 +50,11 @@ install(TARGETS ${MODULE_NAME}
 )
 
 install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/densifier_IF.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/densifier_dummy.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/densifier_factory.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/densifier_settings.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/densifier_settings_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/densifier_IF.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/densifier_dummy.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/densifier_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/densifier_settings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/densifier_settings_factory.h
     # ${CMAKE_CURRENT_SOURCE_DIR}/include/${module_NAME}/plane_sweep.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${MODULE_NAME}
 )

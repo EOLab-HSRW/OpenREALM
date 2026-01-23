@@ -2,7 +2,7 @@
 
 #define LOGURU_WITH_STREAMS 1
 
-#include <stages/pose_estimation.h>
+#include <OpenREALM/stages/pose_estimation.h>
 
 using namespace realm;
 using namespace stages;

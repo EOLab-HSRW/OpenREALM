@@ -64,15 +64,15 @@ install(TARGETS ${MODULE_NAME}
 )
 
 install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/dummy_referencer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/geometric_referencer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/geospatial_referencer_IF.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/open_vslam.h
-    # ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/orb_slam.h
-    # ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/ov2_slam.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/visual_slam_IF.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/visual_slam_factory.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/visual_slam_settings.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/visual_slam_settings_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/dummy_referencer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/geometric_referencer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/geospatial_referencer_IF.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/open_vslam.h
+    # ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/orb_slam.h
+    # ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/ov2_slam.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/visual_slam_IF.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/visual_slam_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/visual_slam_settings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/visual_slam_settings_factory.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${MODULE_NAME}
 )

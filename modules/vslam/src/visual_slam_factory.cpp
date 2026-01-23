@@ -1,6 +1,6 @@
 
 
-#include <vslam/visual_slam_factory.h>
+#include <OpenREALM/vslam/visual_slam_factory.h>
 
 #if defined USE_ORB_SLAM2 || defined USE_ORB_SLAM3
   #include <realm_vslam_base/orb_slam.h>

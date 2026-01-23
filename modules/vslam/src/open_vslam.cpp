@@ -1,7 +1,7 @@
 
 
-#include <vslam/open_vslam.h>
-#include <core/timer.h>
+#include <OpenREALM/vslam/open_vslam.h>
+#include <OpenREALM/core/timer.h>
 
 #include <openvslam/config.h>
 #include <openvslam/data/landmark.h>

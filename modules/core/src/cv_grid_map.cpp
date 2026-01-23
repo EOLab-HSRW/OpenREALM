@@ -4,8 +4,8 @@
 #include <algorithm>
 #include <cmath>
 
-#include <core/loguru.h>
-#include <core/cv_grid_map.h>
+#include <OpenREALM/core/loguru.h>
+#include <OpenREALM/core/cv_grid_map.h>
 
 using namespace realm;
 

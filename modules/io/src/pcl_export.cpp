@@ -1,6 +1,6 @@
 
 
-#include <io/pcl_export.h>
+#include <OpenREALM/io/pcl_export.h>
 
 #include <opencv2/imgproc.hpp>
 
@@ -8,7 +8,7 @@
 #include <pcl/conversions.h>
 #include <pcl/point_types.h>
 
-#include <core/cv_grid_map.h>
+#include <OpenREALM/core/cv_grid_map.h>
 
 namespace realm
 {

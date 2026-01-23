@@ -1,6 +1,6 @@
 
 
-#include <densifier_base/densifier_factory.h>
+#include <OpenREALM/densifier_base/densifier_factory.h>
 
 using namespace realm;
 

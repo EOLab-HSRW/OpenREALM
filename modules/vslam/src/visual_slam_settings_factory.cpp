@@ -1,7 +1,7 @@
 
 
-#include <vslam/visual_slam_settings_factory.h>
-#include <io/utilities.h>
+#include <OpenREALM/vslam/visual_slam_settings_factory.h>
+#include <OpenREALM/io/utilities.h>
 
 using namespace realm;
 

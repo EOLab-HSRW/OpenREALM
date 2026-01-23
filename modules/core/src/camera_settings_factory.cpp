@@ -1,6 +1,6 @@
 
 
-#include <core/camera_settings_factory.h>
+#include <OpenREALM/core/camera_settings_factory.h>
 
 using namespace realm;
 

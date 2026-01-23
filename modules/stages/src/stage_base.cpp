@@ -1,8 +1,8 @@
 
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
-#include <stages/stage_base.h>
+#include <OpenREALM/stages/stage_base.h>
 
 using namespace realm;
 

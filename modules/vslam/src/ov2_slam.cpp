@@ -1,5 +1,5 @@
-#include <vslam/ov2_slam.h>
-#include <core/timer.h>
+#include <OpenREALM/vslam/ov2_slam.h>
+#include <OpenREALM/core/timer.h>
 
 using namespace realm;
 

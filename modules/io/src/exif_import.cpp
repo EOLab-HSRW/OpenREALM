@@ -1,9 +1,9 @@
 
 
-#include <io/exif_import.h>
-#include <core/timer.h>
+#include <OpenREALM/io/exif_import.h>
+#include <OpenREALM/core/timer.h>
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
 namespace realm
 {

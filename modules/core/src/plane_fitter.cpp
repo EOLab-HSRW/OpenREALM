@@ -3,7 +3,7 @@
 #include <eigen3/Eigen/Eigen>
 #include <opencv2/core.hpp>
 
-#include <core/plane_fitter.h>
+#include <OpenREALM/core/plane_fitter.h>
 
 namespace realm
 {

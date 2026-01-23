@@ -1,6 +1,6 @@
 
 
-#include <stages/densification.h>
+#include <OpenREALM/stages/densification.h>
 
 using namespace realm;
 using namespace stages;

@@ -1,11 +1,11 @@
 
 
-#include <core/loguru.h>
-#include <core/tree_node.h>
-#include <stages/mosaicing.h>
+#include <OpenREALM/core/loguru.h>
+#include <OpenREALM/core/tree_node.h>
+#include <OpenREALM/stages/mosaicing.h>
 
 #ifdef WITH_PCL
-#include <io/pcl_export.h>
+#include <OpenREALM/io/pcl_export.h>
 #endif
 
 using namespace realm;

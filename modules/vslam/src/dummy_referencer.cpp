@@ -1,8 +1,8 @@
 
 
-#include <vslam/dummy_referencer.h>
+#include <OpenREALM/vslam/dummy_referencer.h>
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
 using namespace realm;
 

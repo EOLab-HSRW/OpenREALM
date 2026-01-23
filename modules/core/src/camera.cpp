@@ -7,7 +7,7 @@
 // TODO: Update this to be conditional on OpenCV4
 #include <opencv2/calib3d.hpp>
 
-#include <core/camera.h>
+#include <OpenREALM/core/camera.h>
 
 namespace realm
 {

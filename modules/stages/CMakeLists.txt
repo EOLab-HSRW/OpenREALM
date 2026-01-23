@@ -55,15 +55,15 @@ install(TARGETS ${MODULE_NAME}
 )
 
 install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/conversions.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/densification.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/mosaicing.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/ortho_rectification.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/pose_estimation.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/stage_base.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/stage_settings.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/stage_settings_factory.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/surface_generation.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/tileing.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/conversions.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/densification.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/mosaicing.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/ortho_rectification.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/pose_estimation.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/stage_base.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/stage_settings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/stage_settings_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/surface_generation.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/tileing.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${MODULE_NAME}
 )

@@ -1,8 +1,8 @@
 
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
-#include <io/utilities.h>
+#include <OpenREALM/io/utilities.h>
 
 using namespace realm;
 
@@ -11,6 +11,7 @@ bool io::fileExists(const std::string &filepath)
   return boost::filesystem::exists(filepath);
 }
 
+[[deprecated("Harley: In going to remove this function")]]
 bool io::dirExists(const std::string &directory)
 {
   return boost::filesystem::exists(directory);

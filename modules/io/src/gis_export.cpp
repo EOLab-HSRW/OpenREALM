@@ -2,9 +2,9 @@
 
 #include <opencv2/imgproc.hpp>
 
-#include <core/loguru.h>
-#include <core/timer.h>
-#include <io/gis_export.h>
+#include <OpenREALM/core/loguru.h>
+#include <OpenREALM/core/timer.h>
+#include <OpenREALM/io/gis_export.h>
 
 using namespace realm;
 

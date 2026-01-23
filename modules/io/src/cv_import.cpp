@@ -18,8 +18,8 @@
 * along with OpenREALM. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <io/cv_import.h>
-#include <io/utilities.h>
+#include <OpenREALM/io/cv_import.h>
+#include <OpenREALM/io/utilities.h>
 
 using namespace realm;
 

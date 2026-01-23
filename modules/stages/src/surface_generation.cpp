@@ -1,8 +1,8 @@
 
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
-#include <stages/surface_generation.h>
+#include <OpenREALM/stages/surface_generation.h>
 
 using namespace realm;
 using namespace stages;

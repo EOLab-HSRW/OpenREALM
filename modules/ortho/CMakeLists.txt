@@ -58,14 +58,14 @@ install(TARGETS ${MODULE_NAME}
 )
 
 install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/delaunay_2d.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/dsm.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/gdal_warper.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/map_tiler.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/nanoflann.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/nearest_neighbor.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/rectification.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/tile.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/tile_cache.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/delaunay_2d.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/dsm.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/gdal_warper.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/map_tiler.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/nanoflann.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/nearest_neighbor.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/rectification.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/tile.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/tile_cache.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${MODULE_NAME}
 )

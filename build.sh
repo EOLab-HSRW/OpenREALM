@@ -10,3 +10,4 @@ cmake -S . -B build \
 
 cmake --build build -j
 cmake --install build --prefix "$PWD/install"
+# sudo cmake --install build

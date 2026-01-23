@@ -3,7 +3,7 @@
 #include <opencv2/calib3d.hpp>
 #include <opencv2/imgproc/imgproc_c.h>
 
-#include <core/stereo.h>
+#include <OpenREALM/core/stereo.h>
 
 void realm::stereo::computeRectification(const Frame::Ptr &frame_left,
                                          const Frame::Ptr &frame_right,

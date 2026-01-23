@@ -2,8 +2,8 @@
 
 #include <opencv2/imgproc/imgproc_c.h>
 
-#include <core/analysis.h>
-#include <core/loguru.h>
+#include <OpenREALM/core/analysis.h>
+#include <OpenREALM/core/loguru.h>
 
 using namespace realm;
 

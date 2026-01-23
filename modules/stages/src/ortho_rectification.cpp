@@ -1,8 +1,8 @@
 
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
-#include <stages/ortho_rectification.h>
+#include <OpenREALM/stages/ortho_rectification.h>
 
 using namespace realm;
 using namespace stages;

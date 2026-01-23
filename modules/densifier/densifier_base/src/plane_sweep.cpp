@@ -1,6 +1,6 @@
 
 
-#include <densifier_base/plane_sweep.h>
+#include <OpenREALM/densifier_base/plane_sweep.h>
 
 #include <psl_base/exception.h>
 

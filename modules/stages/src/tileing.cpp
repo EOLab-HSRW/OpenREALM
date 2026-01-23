@@ -18,9 +18,9 @@
 * along with OpenREALM. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <core/loguru.h>
+#include <OpenREALM/core/loguru.h>
 
-#include <stages/tileing.h>
+#include <OpenREALM/stages/tileing.h>
 
 using namespace realm;
 using namespace stages;

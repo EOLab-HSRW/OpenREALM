@@ -1,4 +1,4 @@
-#include <core/point_cloud.h>
+#include <OpenREALM/core/point_cloud.h>
 
 using namespace realm;
 

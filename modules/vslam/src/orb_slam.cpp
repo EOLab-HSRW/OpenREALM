@@ -1,7 +1,7 @@
 
 
-#include <vslam/orb_slam.h>
-#include <core/loguru.h>
+#include <OpenREALM/vslam/orb_slam.h>
+#include <OpenREALM/core/loguru.h>
 
 using namespace realm;
 

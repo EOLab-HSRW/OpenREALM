@@ -49,10 +49,7 @@ target_compile_features(${MODULE_NAME} PUBLIC cxx_std_17)
 target_include_directories(${MODULE_NAME}
     PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
-
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}>
 )
 set_target_properties(${MODULE_NAME} PROPERTIES EXPORT_NAME ${MODULE_NAME})
 
@@ -70,26 +67,27 @@ install(TARGETS core
 )
 
 install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/analysis.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/camera.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/camera_settings.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/camera_settings_factory.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/conversions.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/cv_grid_map.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/depthmap.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/frame.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/imu_settings.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/loguru.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/plane_fitter.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/point_cloud.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/settings_base.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/stereo.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/structs.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/timer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/tree_node.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/utm32.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/wgs84.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/worker_thread_base.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/analysis.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/camera.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/camera_settings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/camera_settings_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/conversions.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/cv_grid_map.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/depthmap.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/enums.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/frame.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/imu_settings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/loguru.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/plane_fitter.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/point_cloud.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/settings_base.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/stereo.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/structs.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/timer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/tree_node.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/utm32.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/wgs84.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/worker_thread_base.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${MODULE_NAME}
 )
 

@@ -66,17 +66,17 @@ install(TARGETS ${MODULE_NAME}
 )
 
 install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/cv_export.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/cv_import.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/exif_export.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/exif_import.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/gdal_continuous_writer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/gis_export.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/mvs_export.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/pcl_export.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/realm_export.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/realm_import.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/${MODULE_NAME}/utilities.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/cv_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/cv_import.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/exif_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/exif_import.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/gdal_continuous_writer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/gis_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/mvs_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/pcl_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/realm_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/realm_import.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${MODULE_NAME}/utilities.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${MODULE_NAME}
 )
 

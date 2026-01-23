@@ -1,7 +1,7 @@
 
 
-#include <stages/stage_settings_factory.h>
-#include <stages/stage_settings.h>
+#include <OpenREALM/stages/stage_settings_factory.h>
+#include <OpenREALM/stages/stage_settings.h>
 
 using namespace realm;
 
